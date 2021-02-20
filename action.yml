@@ -10,3 +10,6 @@ runs:
       shell: bash
     - run: $GITHUB_ACTION_PATH/builder.sh
       shell: bash
+branding:
+  icon: 'box'
+  color: 'black'
