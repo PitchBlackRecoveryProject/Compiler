@@ -17,6 +17,10 @@ PATH for Compiled Recovery is `work/out/target/product/$VENDOR/$CODENAME/*.img ,
 ## Usage 👨‍💻
 
 ```yaml
+- name: export PATHS
+  run: |
+    echo "/usr/local/bin" >> $GITHUB_PATH
+    echo "/home/runner/bin" >> $GITHUB_PATH
 - name: Recovery Compilation
   uses: Area69Lab/Recovery-Compiler@production
   env:
