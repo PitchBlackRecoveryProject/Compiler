@@ -28,7 +28,7 @@ echo "::endgroup::"
 echo "::group::Extra Commands"
 if [[ ! -z "$EXTRA_CMD" ]]; then
 	printf "Executing Extra Commands\n"
-	$EXTRA_CMD
+        eval $EXTRA_CMD
 else
 	printf "No extra commands mentioned.\n"
 fi
