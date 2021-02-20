@@ -73,8 +73,4 @@ mkdir -p /opt/ccache &>/dev/null
 sudo chown runner:docker /opt/ccache
 CCACHE_DIR=/opt/ccache ccache -M 5G &>/dev/null
 
-# Fallback For Setting New PATH Variable, The GitHub Actions Way
-echo "/usr/local/bin" >> $GITHUB_PATH
-echo "/home/runner/bin" >> $GITHUB_PATH
-
 printf "All Done.\nReady To Build Recoveries...\n"
