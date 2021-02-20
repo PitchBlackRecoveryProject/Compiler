@@ -1,6 +1,7 @@
 name: 'Recovery Compiler For Github Actions' 
 author: 'ElytrA8' 
-description: 'Universal Recovery Compiler' 
+description: 'Universal Recovery Compiler'
+
 runs:
   using: "composite"
   steps:
@@ -10,3 +11,6 @@ runs:
       shell: bash
     - run: $GITHUB_ACTION_PATH/builder.sh
       shell: bash
+branding:
+  icon: 'box'
+  color: 'black'
