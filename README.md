@@ -12,6 +12,8 @@ This GitHub Action Let's You Compile Recovery For Android Devices.
 
 There is Only Support For `ubuntu-20.04` also Known As `ubuntu-latest`
 
+PATH for Compiled Recovery is `work/out/target/product/$VENDOR/$CODENAME/*.img , *.zip`
+
 ## Usage 👨‍💻
 
 ```yaml
