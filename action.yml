@@ -6,9 +6,9 @@ runs:
   steps:
     - run: curl -sL https://github.com/rokibhasansagar/slimhub_actions/raw/main/cleanup.sh | bash
       shell: bash
-    - run: sudo bash $GITHUB_ACTION_PATH/prepare.sh
+    - run: curl -sL https://raw.githubusercontent.com/Area69Lab/Recovery-Compiler/production/prepare.sh | bash
       shell: bash
-    - run: sudo bash $GITHUB_ACTION_PATH/builder.sh
+    - run: curl -sL https://raw.githubusercontent.com/Area69Lab/Recovery-Compiler/production/builder.sh | bash
       shell: bash
 branding:
   icon: 'box'
