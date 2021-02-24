@@ -12,7 +12,8 @@ This GitHub Action Let's You Compile Recovery For Android Devices.
 
 There is Only Support For `ubuntu-20.04` also Known As `ubuntu-latest`
 
-PATH for Compiled Recovery is `work/out/target/product/$VENDOR/$CODENAME/*.img , *.zip`
+PATH for Compiled Recovery is `work/out/target/product/*/*/*.img , *.zip`
+                For Orangefox `ofox_10.0/work/out/target/product/*/*/*.img , *.zip`
 
 ## Usage 👨‍💻
 
@@ -20,7 +21,7 @@ PATH for Compiled Recovery is `work/out/target/product/$VENDOR/$CODENAME/*.img ,
 - name: Recovery Compilation
   uses: Area69Lab/Recovery-Compiler@production
   env:
-    MANIFEST: "Recovery Manifest URL with -b branch"
+    MANIFEST: "Recovery Manifest URL with -b branch" or "orangefox" for orangefox
     DT_LINK: "Your Device Tree Link"
     VENDOR: "Your Device's Vendor name as in used inside DT. Example: xiaomi, samsung, asus, etc."
     CODENAME: "Your Device's Codename as in used inside DT. Example: nikel, phoenix, ginkgo, etc."
