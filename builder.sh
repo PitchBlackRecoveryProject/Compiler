@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-printf "\e[1;32m \u2730 Area69Lab Recovery Automation\e[0m\n\n"
+printf "\e[1;32m \u2730 Recovery Compiler\e[0m\n\n"
 
 mkdir -p work &>/dev/null
 cd work &>/dev/null || exit 1
 
 echo "::group::Source Repo Sync"
 printf "Initializing Repo\n"
-repo init -q -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
-repo sync -c -q --force-sync --no-clone-bundle --no-tags -j6 &>/dev/null
+if [[ "$MANIFEST" == "orangefox" ]]; then
+       printf "Manually Cloning Ofox Repo\n"
+       rsync rsync://sources.orangefox.download/sources/fox_10.0 . --progress -a
+else
+       repo init -q -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+       repo sync -c -q --force-sync --no-clone-bundle --no-tags -j6 &>/dev/null
+fi
 echo "::endgroup::"
 
 echo "::group::Device and Kernel Tree Cloning"
@@ -51,4 +56,3 @@ echo "::endgroup::"
 echo "::group::Compilation"
 mka $TARGET
 echo "::groupend::"
-
