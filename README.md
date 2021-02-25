@@ -14,6 +14,8 @@ There is Only Support For `ubuntu-20.04` also Known As `ubuntu-latest`
 
 PATH for Compiled Recovery is `work/out/target/product/*/*/*.img , *.zip`
                 For Orangefox `ofox_10.0/work/out/target/product/*/*/*.img , *.zip`
+            
+Caution :- `orangefox` term is Only For Android10 based devices aka dynamic devices
 
 ## Usage 👨‍💻
 
@@ -33,7 +35,7 @@ PATH for Compiled Recovery is `work/out/target/product/*/*/*.img , *.zip`
     TZ: "Asia/Kolkata" # Set Time-Zone According To Your Region
 ```
 
-# Credits 🥰
+## Credits 🥰
 
 [rokibhasansagar](https://github.com/rokibhasansagar) For His Cleanup Scripts And Great Help
 
