@@ -41,4 +41,4 @@ Caution :- `orangefox` term is Only For Android10 based devices aka dynamic devi
 
 ## License 🔖
 
-Licensed Under [GPLV3](https://github.com/Area69Lab/Recovery-Compiler/blob/production/LICENSE)
+Licensed Under [GPLV3](https://github.com/Carbonatedblack/Recovery-Compiler/blob/production/LICENSE)
