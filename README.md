@@ -12,8 +12,9 @@ This GitHub Action Let's You Compile Recovery For Android Devices.
 
 There is Only Support For `ubuntu-20.04` also Known As `ubuntu-latest`
 
-PATH for Compiled Recovery is `work/out/target/product/*/*/*.img , *.zip`
-For Orangefox android V10 Use `orangefox` in `MANIFEST` `/home/runner/work/out/target/product/*/*/*.img , *.zip`
+PATH for Compiled Recovery is `/home/runner/work/out/target/product/*/*.img , *.zip`
+
+For Orangefox android V10 Use `orangefox` in `MANIFEST` `/home/runner/work/out/target/product/*/*.img , *.zip`
             
 Caution :- `orangefox` term is Only For Android10 based devices aka dynamic devices
 
