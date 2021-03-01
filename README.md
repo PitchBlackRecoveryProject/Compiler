@@ -24,7 +24,7 @@ For Android 9 devices you can use Manifest
 
 ```yaml
 - name: Recovery Compilation
-  uses: Area69Lab/Recovery-Compiler@production
+  uses: CarbonatedBlack/Recovery-Compiler@production
   env:
     MANIFEST: "Recovery Manifest URL with -b branch" or "orangefox" for orangefox android v10
     DT_LINK: "Your Device Tree Link"
