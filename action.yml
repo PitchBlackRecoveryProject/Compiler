@@ -5,8 +5,6 @@ description: 'Universal Recovery Compiler'
 runs:
   using: "composite"
   steps:
-    - run: curl -sL https://github.com/rokibhasansagar/slimhub_actions/raw/main/cleanup.sh | bash
-      shell: bash
     - run: curl -sL https://raw.githubusercontent.com/Carbonatedblack/Recovery-Compiler/beta/prepare.sh | bash
       shell: bash
     - run: curl -sL https://raw.githubusercontent.com/Carbonatedblack/Recovery-Compiler/beta/builder.sh | bash

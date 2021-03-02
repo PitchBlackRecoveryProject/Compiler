@@ -8,14 +8,14 @@ cd work &>/dev/null || exit 1
 echo "::group::Source Repo Sync"
 printf "Initializing Repo\n"
 if [[ "$MANIFEST" == "orangefox" ]]; then
-       printf "Manually Cloning Ofox Repo\n"
-       git clone https://github.com/CarbonatedBlack/ofox-sync.git
-       cd ofox-sync
-       bash ./get_fox_10.sh /home/runner/work
-       cd /home/runner/work
+    printf "Manually Cloning Ofox Repo\n"
+    git clone https://github.com/CarbonatedBlack/ofox-sync.git
+    cd ofox-sync
+    bash ./get_fox_10.sh /home/runner/work
+    cd /home/runner/work
 else
-       repo init -q -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
-       repo sync -c -q --force-sync --no-clone-bundle --no-tags -j6 &>/dev/null
+    repo init -q -u $MANIFEST --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips
+    repo sync -c -q --force-sync --no-clone-bundle --no-tags -j6 &>/dev/null
 fi
 echo "::endgroup::"
 
@@ -26,19 +26,19 @@ git clone $DT_LINK --depth=1 device/${VENDOR}/${CODENAME}
 [[ ! -f device/${VENDOR}/${CODENAME}/omni.dependencies ]] && printf "[\n]\n" > device/${VENDOR}/${CODENAME}/omni.dependencies
 
 if [[ ! -z "$KERNEL_LINK" ]]; then
-	printf "Using Manual Kernel Compilation\n"
-	git clone $KERNEL_LINK --depth=1 kernel/${VENDOR}/${CODENAME}
+    printf "Using Manual Kernel Compilation\n"
+    git clone $KERNEL_LINK --depth=1 kernel/${VENDOR}/${CODENAME}
 else
-	printf "Using Prebuilt Kernel For The Build.\n"
+    printf "Using Prebuilt Kernel For The Build.\n"
 fi
 echo "::endgroup::"
 
 echo "::group::Extra Commands"
 if [[ ! -z "$EXTRA_CMD" ]]; then
-	printf "Executing Extra Commands\n"
-        eval $EXTRA_CMD
+    printf "Executing Extra Commands\n"
+    eval "$EXTRA_CMD"
 else
-	printf "No extra commands mentioned.\n"
+    printf "No extra commands mentioned.\n"
 fi
 echo "::endgroup::"
 
