@@ -14,10 +14,10 @@ runs:
         unset SECONDS_LEFT
       name: 'Trigger'
       shell: bash
-    - run: $GITHUB_ACTION_PATH/prepare.sh
+    - run: curl -sL https://raw.githubusercontent.com/Carbonatedblack/Recovery-Compiler/beta/prepare.sh | bash
       name: 'Prepare Environment'
       shell: bash
-    - run: $GITHUB_ACTION_PATH/builder.sh
+    - run: curl -sL https://raw.githubusercontent.com/Carbonatedblack/Recovery-Compiler/beta/builder.sh | bash
       name: 'Build Recovery'
       shell: bash
 branding:
