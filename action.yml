@@ -5,9 +5,20 @@ description: 'Universal Recovery Compiler'
 runs:
   using: "composite"
   steps:
-    - run: curl -sL https://raw.githubusercontent.com/Carbonatedblack/Recovery-Compiler/beta/prepare.sh | bash
+    - run: |
+        while ((${SECONDS_LEFT:=10} > 0)); do
+          printf "Please wait %ss ...\n" "${SECONDS_LEFT}"
+          sleep 1
+          SECONDS_LEFT=$((SECONDS_LEFT - 1))
+        done
+        unset SECONDS_LEFT
+      name: 'Trigger'
       shell: bash
-    - run: curl -sL https://raw.githubusercontent.com/Carbonatedblack/Recovery-Compiler/beta/builder.sh | bash
+    - run: $GITHUB_ACTION_PATH/prepare.sh
+      name: 'Prepare Environment'
+      shell: bash
+    - run: $GITHUB_ACTION_PATH/builder.sh
+      name: 'Build Recovery'
       shell: bash
 branding:
   icon: 'box'
