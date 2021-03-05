@@ -45,6 +45,9 @@ export TARGET=${TARGET:-recoveryimage}
 export FLAVOR=${FLAVOR:-eng}
 # Default TZ (Timezone) will be set as UTC if not provided
 export TZ=${TZ:-UTC}
+if [[ ! ${TZ} == "UTC" ]]; then
+    sudo timedatectl set-timezone ${TZ}
+fi
 echo "::endgroup::"
 
 echo "::group::Installation Of Recommended Programs"
