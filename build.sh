@@ -176,4 +176,9 @@ echo "::group::Compilation"
 mka ${TARGET}
 echo "::endgroup::"
 
+# Export VENDOR, CODENAME and BuildPath for next steps
+echo "VENDOR=${VENDOR}" >> ${GITHUB_ENV}
+echo "CODENAME=${CODENAME}" >> ${GITHUB_ENV}
+echo "BuildPath=/home/runner/builder" >> ${GITHUB_ENV}
+
 # TODO:: Add GitHub Release Script Here

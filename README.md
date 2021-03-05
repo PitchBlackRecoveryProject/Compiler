@@ -17,9 +17,9 @@ You MUST use `rokibhasansagar/slimhub_actions@main` Action before running this C
 
 ### Output
 
-As the Working Directory where the repo-sync will occur is set in `/home/runner/builder/`.
+As the Working Directory where the repo-sync will occur is set in `/home/runner/builder/`, accessible from `${BuildPath}`.
 
-So, Compiled Recovery will be found under `/home/runner/builder/out/target/product/*/*{.img,.zip}`
+So, Compiled Recovery will be found under `/home/runner/builder/out/target/product/*/*{.img,.zip}`. Same can be accessed using `${BuildPath}/out/target/product/${CODENAME}/*{.img,.zip}`
 
 ### Notes for Orangefox ✋
 
