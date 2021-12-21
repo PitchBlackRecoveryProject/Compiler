@@ -153,6 +153,18 @@ else
 fi
 echo "::endgroup::"
 
+echo "::group::Secret Bootable"
+if [[ $USE_SECRET_BOOTABLE == 'true' ]] && [[ -z "$SECRET_BR" ]]; then
+    printf "Secret Branch is Not Defined\n"
+elif [[ $USE_SECRET_BOOTABLE == 'true' ]] && [[ ! -z "$SECRET_BR" ]]; then
+    rm -rf bootable/recovery
+    printf "Cloning Secret Bootable\n"
+    git clone --quiet --progress https://pbrp-bot:$GH_BOT_TOKEN@github.com/PitchBlackRecoveryProject/pbrp_recovery_secrets -b ${SECRET_BR} --single-branch bootable/recovery
+else
+    printf "Using Default Bootable\n"
+fi
+echo "::endgroup::"
+
 echo "::group::Extra Commands"
 if [[ ! -z "$EXTRA_CMD" ]]; then
     printf "Executing Extra Commands\n"
