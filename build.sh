@@ -127,17 +127,9 @@ cd /home/runner/builder || exit 1
 
 echo "::group::Source Repo Sync"
 printf "Initializing Repo\n"
-if [[ "${MANIFEST}" == "orangefox10" ]]; then
-    printf "Manually Preparing Ofox Repos For Dynamic Partition Device\n"
-    git clone https://github.com/CarbonatedBlack/ofox-sync.git
-    cd ofox-sync || exit
-    bash ./get_fox_10.sh /home/runner/builder
-    cd /home/runner/builder || exit
-else
-    printf "We will be using %s for Manifest source\n" "${MANIFEST}"
-    repo init -q -u ${MANIFEST} --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips || { printf "Repo Initialization Failed.\n"; exit 1; }
-    repo sync -c -q --force-sync --no-clone-bundle --no-tags -j6 || { printf "Git-Repo Sync Failed.\n"; exit 1; }
-fi
+printf "We will be using %s for Manifest source\n" "${MANIFEST}"
+repo init -q -u ${MANIFEST} --depth=1 --groups=all,-notdefault,-device,-darwin,-x86,-mips || { printf "Repo Initialization Failed.\n"; exit 1; }
+repo sync -c -q --force-sync --no-clone-bundle --no-tags -j6 || { printf "Git-Repo Sync Failed.\n"; exit 1; }
 echo "::endgroup::"
 
 echo "::group::Device and Kernel Tree Cloning"

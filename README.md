@@ -21,11 +21,6 @@ As the Working Directory where the repo-sync will occur is set in `/home/runner/
 
 So, Compiled Recovery will be found under `/home/runner/builder/out/target/product/*/*{.img,.zip}`. Same can be accessed using `${BuildPath}/out/target/product/${CODENAME}/*{.img,.zip}`
 
-### Notes for Orangefox ✋
-
-Only for Orangefox Android V10 dynamic devices, Use `orangefox10` as `MANIFEST`.
-For Android 9 devices you can use Manifest URL.
-
 ## Detailed Usage 👨‍💻
 
 **Note:** If you want to minimize the input in the Workflow YAML File, Read On.
