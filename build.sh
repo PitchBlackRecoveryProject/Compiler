@@ -160,7 +160,7 @@ echo "::endgroup::"
 echo "::group::Extra Commands"
 if [[ ! -z "$EXTRA_CMD" ]]; then
     printf "Executing Extra Commands\n"
-    eval "${EXTRA_CMD}"
+    eval "${EXTRA_CMD}" || { printf "Failed While Executing Extra Commands.\n"; exit 1; }
     cd /home/runner/builder || exit
 fi
 echo "::endgroup::"
