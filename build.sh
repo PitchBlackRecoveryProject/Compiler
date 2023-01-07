@@ -180,7 +180,7 @@ lunch omni_${CODENAME}-${FLAVOR} || { printf "Compilation failed.\n"; exit 1; }
 echo "::endgroup::"
 
 echo "::group::Compilation"
-mka -j$(nproc --all) ${TARGET} || { printf "Compilation failed.\n"; exit 1; }
+mka -j$(nproc --all) ${TARGET} || { printf "Compilation failed.\n "; free -h; exit 1; }
 echo "::endgroup::"
 
 # Export VENDOR, CODENAME and BuildPath for next steps
