@@ -27,6 +27,5 @@ task:
     fi
       
   build_script:
-      environment:
       - curl -sL ${GITHUB_ACTION_PATH}/build.sh | bash
       
