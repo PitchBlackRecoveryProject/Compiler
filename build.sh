@@ -169,7 +169,7 @@ lunch omni_${CODENAME}-${FLAVOR} || lunch twrp_${CODENAME}-${FLAVOR} || lunch pb
 echo "::endgroup::"
 
 echo "::group::Compilation"
-mka -j 2 ${TARGET} || { printf "Compilation failed.\n "; free -h; exit 1; }
+mka pbrp -j 2 ${TARGET} || { printf "Compilation failed.\n "; free -h; exit 1; }
 echo "::endgroup::"
 
 # Export VENDOR, CODENAME and BuildPath for next steps
