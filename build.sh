@@ -39,8 +39,8 @@ if [[ -z ${DT_LINK} ]]; then
     export DT_LINK="https://github.com/${GITHUB_REPOSITORY} -b ${DT_BR}"
 	unset DT_BR
 fi
-# Default TARGET will be recoveryimage if not provided
-export TARGET=${TARGET:-recoveryimage}
+# Default TARGET will be pbrp if not provided
+export TARGET=${TARGET:-pbrp}
 # Default FLAVOR will be eng if not provided
 export FLAVOR=${FLAVOR:-eng}
 # Default TZ (Timezone) will be set as UTC if not provided
